@@ -19,9 +19,6 @@ Highcharts.chart('container', {
       text: 'Time (Seconds)'
     }
   },
-
-  var X = 0;
-  var Y = 0;
   
   series: [{
     data: [
