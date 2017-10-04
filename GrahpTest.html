@@ -2,10 +2,34 @@
 <html>
   <head>
     <title>Line Graph Test</title>
+    
+    <script type="text/javascript">
+                function loadFile(o)
+                {
+                    var fr = new FileReader();
+                    fr.onload = function(e)
+                        {
+                            showDataFile(e, o);
+                        };
+                    fr.readAsText(o.files[0]);
+                }
+
+                function showDataFile(e, o)
+                {
+                    document.getElementById("data").innerText = e.target.result;
+                }
+            </script>
+
+        </script>
+    
   </head>
 
   <body>
     <h1>Cosme's Attempt to Display Last Year's Altitude Data</h1><br /><a href= "oopsies.github.io">Back to Oopsie</a>
     <script async src="//jsfiddle.net/01vq934x/embed/"></script>
+    
+    Select file to read <input type="file" onchange="loadFile(this)">
+    <pre id="data"></pre>
+    
   </body>
 </html>
