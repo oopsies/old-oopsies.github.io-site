@@ -21,11 +21,24 @@
             </script>
         </script>
     
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+            <style type="text/css">
+          #container {
+            min-width: 310px;
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto
+          }
+		</style>
+  
+    <!-- <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script> -->
     <!-- <script src="https://code.highcharts.com/modules/exporting.js"></script> -->
 
-    <div id="container"></div>
+    <!-- <div id="container"></div> -->
+  
+   <!-- <script async src= "/GraphTest.js"></script>
+    
+   <script async src="//jsfiddle.net/01vq934x/embed/"></script> -->
   
   </head>
 
@@ -35,9 +48,46 @@
     Select file to read <input type="file" onchange="loadFile(this)">
     <pre id="data"></pre>
     
-    <script async src= "/GraphTest.js"></script>
+    <script src="../../code/highcharts.js"></script>
+    <script src="../../code/modules/exporting.js"></script>
+
+    <div id="container"></div>
     
-   <script async src="//jsfiddle.net/01vq934x/embed/"></script>
+    <script type="text/javascript">
+      
+    Highcharts.chart('container', {
+
+  title: {
+    text: 'Altitude of Pi Balloon'
+  },
+
+  subtitle: {
+    text: 'Source: Sense_Hat Data'
+  },
+
+  yAxis: {
+    title: {
+      text: 'Altitude (Meters)'
+    }
+  },
+
+  xAxis: {
+    title: {
+      text: 'Time (Seconds)'
+    }
+  },
+  
+  series: [{
+    data: [
+      [0, 216],
+      [6, 226],
+    ]
+  }]
+
+
+});
+      
+  </script>
     
   </body>
 </html>
