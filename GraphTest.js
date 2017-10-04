@@ -20,6 +20,9 @@ Highcharts.chart('container', {
     }
   },
 
+  var X = 0;
+  var Y = 0;
+  
   series: [{
     data: [
       [0, 216],
