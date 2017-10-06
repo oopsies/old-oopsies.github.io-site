@@ -54,7 +54,11 @@
     
     <script type="text/javascript">
       
-  Highcharts.chart('container', {
+  Highcharts.chart('container'), {
+    
+    var inputX;
+    inputX = "0, 6, 12, 18, 24, 30".split(",");
+    console.log(inputX);
 
   title: {
     text: 'Altitude of Pi Balloon'
