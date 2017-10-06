@@ -7,6 +7,10 @@
                 function loadFile(o)
                 {
                     var fr = new FileReader();
+                    
+                    var inputX;
+                    fr.readAsText(inputX).split(",");
+                  
                     fr.onload = function(e)
                         {
                             showDataFile(e, o);
@@ -53,10 +57,6 @@
     <div id="container"></div>
     
     <script type="text/javascript">
-      
-    var inputX;
-    fr.readAsText(inputX).split(",");
-    console.log(inputX);
       
   Highcharts.chart('container', {
     
