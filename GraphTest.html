@@ -8,8 +8,10 @@
                 {
                     var fr = new FileReader();
                     
-                    var inputX;
-                    fr.readAsText(inputX).split(",");
+                    var inputX = evt.target.files[0];
+                    fr.readAsText(inputX);
+                    inputX = inputX.split(",");
+                    console.log(inputX);
                   
                     fr.onload = function(e)
                         {
