@@ -46,8 +46,6 @@
    
     Enter File With X Values: <input type="file" onchange="loadFile(this)">
     <pre id="data"></pre>
-    Enter File With Y Values: <input type="file" onchange="loadFile(this)">
-    <pre id="data"></pre>
     
     <script src="../../code/highcharts.js"></script>
     <script src="../../code/modules/exporting.js"></script>
@@ -56,8 +54,8 @@
     
     <script type="text/javascript">
       
-    var inputX;
-    inputX = "0, 6, 12, 18, 24, 30".split(",");
+    var inputX = evt.target.files[0];  
+    fr.readAsText(myFile).split(",");
     console.log(inputX);
       
   Highcharts.chart('container', {
