@@ -4,14 +4,20 @@
     <title>Line Graph Test</title>
     
     <script type="text/javascript">
+      
+                function readSingleFile(evt) {
+                  //Retrieve the first (and only!) File from the FileList object
+                  var inputX = evt.target.files[0];
+                  var reader = new FileReader();
+                  reader.readAsText(inputX);
+                  inputX = inputX.split(",");
+                  reader.onload=function(){alert(reader.result)}
+                  console.log(inputX);
+                }
+      
                 function loadFile(o)
                 {
                     var fr = new FileReader();
-                    
-                    var inputX;
-                    fr.readAsText(inputX);
-                    inputX = inputX.split(",");
-                    console.log(inputX);
                   
                     fr.onload = function(e)
                         {
@@ -50,7 +56,7 @@
   <body>
     <h1>Cosme's Attempt to Display Last Year's Altitude Data</h1><br /><a href= "oopsies.github.io">Back to Oopsie</a><br />
    
-    Enter File With X Values: <input type="file" onchange="loadFile(this)">
+    Enter File With X Values: <input type="file" onchange="readSingleFile(this)">
     <pre id="data"></pre>
     
     <script src="../../code/highcharts.js"></script>
@@ -61,6 +67,8 @@
     <script type="text/javascript">
       
   Highcharts.chart('container', {
+    
+    
     
   title: {
     text: 'Altitude of Pi Balloon'
