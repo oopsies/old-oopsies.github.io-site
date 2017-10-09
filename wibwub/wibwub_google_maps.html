@@ -66,7 +66,7 @@
     setInterval(function() {
       pubnub.publish({channel:pnChannel, message:{lat:window.lat + 0, lng:window.lng + 0}});
     }, 6000);
-      console.log(parsedCSV[1][dLat++]);
+      console.log(parsedCSV);
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA8v3Ck99yNV8MweSO1AIFSw39UNG-_wHk&callback=initialize"></script>
   </body>
