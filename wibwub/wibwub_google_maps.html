@@ -18,7 +18,7 @@
     window.lng = -96.66053;
     var dLat = 1;
     var dLng = 1;  
-    var parsedCSV = d3.csv.parseRows(data);
+    var parsedCSV = d3.csv.parseRows("positions.csv");
     var map;
     var mark;
     var lineCoords = [];
@@ -27,6 +27,9 @@
       mark = new google.maps.Marker({position:{lat:lat, lng:lng}, map:map});
       lineCoords.push(new google.maps.LatLng(window.lat, window.lng));
     };
+      
+      
+      
     window.initialize = initialize;
     var redraw = function(payload) {
       lat = payload.message.lat;
