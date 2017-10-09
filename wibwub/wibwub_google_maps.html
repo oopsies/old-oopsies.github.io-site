@@ -49,7 +49,7 @@
     pubnub.subscribe({channels: [pnChannel]});
     pubnub.addListener({message:redraw});
     setInterval(function() {
-      pubnub.publish({channel:pnChannel, message:{lat:window.lat + parsedCSV[1][dLat++], lng:window.lng + parsedCSV[3][dLng++]}});
+      pubnub.publish({channel:pnChannel, message:{lat:window.lat + .001, lng:window.lng + .001}});
     }, 6000);
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA8v3Ck99yNV8MweSO1AIFSw39UNG-_wHk&callback=initialize"></script>
