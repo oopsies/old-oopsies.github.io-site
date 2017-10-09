@@ -23,8 +23,7 @@
         <script type="text/javascript"charset="utf-8">
             d3.text("SenseHat.csv", function(data) {
                 var parsedCSV = d3.csv.parseRows(data);
-                console.log(jquery.csv.toArrays("SenseHat.csv"));
-
+                console.log(parsedCSV);
                 var container = d3.select("body")
                     .append("table")
 
