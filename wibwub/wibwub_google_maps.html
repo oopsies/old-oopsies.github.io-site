@@ -3,6 +3,7 @@
   <head>
     <title>Google Maps Example</title>
     <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.4.1.min.js"></script>
+    <script src="d3.v3.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
   </head>
@@ -12,9 +13,11 @@
       <div id="map-canvas" style="width:600px;height:400px"></div>
     </div>
 
-    <script>
+    <script="text/javascript"charset="utf-8">
     window.lat = 33.10927;
     window.lng = -96.66053;
+    var dLat = 0;
+    var dLng = 0;  
     var map;
     var mark;
     var lineCoords = [];
@@ -46,7 +49,10 @@
     pubnub.subscribe({channels: [pnChannel]});
     pubnub.addListener({message:redraw});
     setInterval(function() {
-      pubnub.publish({channel:pnChannel, message:{lat:window.lat + .001, lng:window.lng + .001}});
+      d3.text("SenseHat.csv", function(data) {
+                var parsedCSV = d3.csv.parseRows(data);
+      }
+      pubnub.publish({channel:pnChannel, message:{lat:window.lat + parsedCSV[1][dLat++], lng:window.lng + parsedCSV[3][dLng++]}});
     }, 6000);
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA8v3Ck99yNV8MweSO1AIFSw39UNG-_wHk&callback=initialize"></script>
