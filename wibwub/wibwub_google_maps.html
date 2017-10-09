@@ -49,9 +49,6 @@
     pubnub.subscribe({channels: [pnChannel]});
     pubnub.addListener({message:redraw});
     setInterval(function() {
-      d3.text("SenseHat.csv", function(data) {
-                var parsedCSV = d3.csv.parseRows(data);
-      }
       pubnub.publish({channel:pnChannel, message:{lat:window.lat + parsedCSV[1][dLat++], lng:window.lng + parsedCSV[3][dLng++]}});
     }, 6000);
     </script>
