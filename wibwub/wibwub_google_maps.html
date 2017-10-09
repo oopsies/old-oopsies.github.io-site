@@ -50,9 +50,8 @@
     pubnub.subscribe({channels: [pnChannel]});
     pubnub.addListener({message:redraw});
       
-      d3.text("SenseHat.csv", function(data) {
+      d3.text("positions.csv", function(data) {
                 parsedCSV = d3.csv.parseRows(data);
-                console.log(parsedCSV[0][5]);
                 var container = d3.select("body")
                     .append("table")
                     .selectAll("tr")
