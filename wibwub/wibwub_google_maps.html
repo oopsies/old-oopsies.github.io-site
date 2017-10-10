@@ -19,8 +19,8 @@
     var dLat = 1;
     var dLng = 1;  
      d3.text("positions.csv", function(data) {
-                parsedCSV = d3.csv.parseRows(data);
-                console.log(parsedCSV);
+                window.parsedCSV = d3.csv.parseRows(data);
+           
             });              
     var map;
     var mark;
@@ -59,7 +59,7 @@
     setInterval(function() {
       pubnub.publish({channel:pnChannel, message:{lat:window.lat + 0, lng:window.lng + 0}});
     }, 6000);
-      console.log(parsedCSV);
+      console.log(window.parsedCSV);
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA8v3Ck99yNV8MweSO1AIFSw39UNG-_wHk&callback=initialize"></script>
   </body>
