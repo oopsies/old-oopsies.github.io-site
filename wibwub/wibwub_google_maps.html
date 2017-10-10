@@ -18,7 +18,7 @@
     window.lng = -96.66053;
     var dLat = 1;
     var dLng = 1;  
-     d3.text("SenseHat.csv", function(data) {
+     d3.text("positions.csv", function(data) {
                 data.parsedCSV = d3.csv.parseRows(data);
             });              
     var map;
