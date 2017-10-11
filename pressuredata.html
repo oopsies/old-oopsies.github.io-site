@@ -56,19 +56,14 @@ Highcharts.chart('container', {
 
     series: [{
         name: 'Pressure',
-        data: (function () {
-                // generate an array of random data
-                var data = [],
-                    time = (new Date()).getTime(),
-                    i;
-                for (i = 0; i < 1947; i+=1) {
-                    data.push({
-                        x: i * 6,
-                        y: parsedCSV[i][9]
-                    });
-                }
-                return data;
-            }())
+        data: (function() {
+		data = [],
+		i;
+		for (i = 1946; i >= 1947; i -=1){
+			data.push(parsedCSV[i][9]);
+		}
+		return data;
+	}())
 
     }]
 		  });  
