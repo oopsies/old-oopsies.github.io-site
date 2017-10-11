@@ -56,7 +56,11 @@
       d3.text("positions.csv", function(data) {
                 parsedCSV = d3.csv.parseRows(data);
     setInterval(function() {
-      pubnub.publish({channel:pnChannel, message:{lat:window.lat + parsedCSV[dLat++][1], lng:window.lng + parsedCSV[dLng++][3]}});
+      var dX = parsedCSV[dLat++][1];
+      var dY = parsedCSV[dLng++][3];
+      console.log(dX);
+      console.log(dY);
+      pubnub.publish({channel:pnChannel, message:{lat:window.lat + dX, lng:window.lng + dY}});
     }, 1000);
       console.log("please tell me something did not break again");
       });  
