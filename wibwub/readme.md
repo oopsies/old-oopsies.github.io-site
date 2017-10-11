@@ -19,9 +19,11 @@ but the first and third rows **_must be present in the csv._**
 aditionally, the first two rows of all columns are ignored, since the first row only contains strings, and the 2nd row contains the starting 
 positions.
 
-the only way to avoid following these rules is to modify the javascript code:
-`var dX = Number(parsedCSV[dLat++][1]);`
-`var dY = Number(parsedCSV[dLng++][3]);`
+the only way to avoid following these rules is to modify the javascript code: 
+
+`var dX = Number(parsedCSV[dLat++][1]);` on `line 59`
+
+`var dY = Number(parsedCSV[dLng++][3]);` on `line 60`
 
 `dLat` and `dLng` are the variable iterations, and change the **_row_** of the csv that is read. 
 both of these values start at 2 to account for ignoring the first 2 rows.
