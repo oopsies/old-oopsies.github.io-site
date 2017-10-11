@@ -18,8 +18,9 @@
     window.lng = -96.66053;
     var dLat = 1;
     var dLng = 1;  
+    var parsedCSV;
      d3.text("positions.csv", function(data) {
-                window.parsedCSV = d3.csv.parseRows(data);
+                parsedCSV = d3.csv.parseRows(data);
            
             });              
     var map;
