@@ -16,8 +16,8 @@
     <script>
     window.lat = 33.10927;
     window.lng = -96.66053;
-    var dLat = 1;
-    var dLng = 1;  
+    var dLat = 2;
+    var dLng = 2;  
     var parsedCSV;        
     var map;
     var mark;
@@ -56,10 +56,10 @@
       d3.text("positions.csv", function(data) {
                 parsedCSV = d3.csv.parseRows(data);
     setInterval(function() {
-      var dX = parsedCSV[dLat++][1];
-      var dY = parsedCSV[dLng++][3];
-      console.log(dX);
-      console.log(dY);
+      var dX = number(parsedCSV[dLat++][1]);
+      var dY = number(parsedCSV[dLng++][3]);
+      console.log("▲ lat: " + dX);
+      console.log("▲ lng: " + dY);
       pubnub.publish({channel:pnChannel, message:{lat:window.lat + dX, lng:window.lng + dY}});
     }, 1000);
       console.log("please tell me something did not break again");
