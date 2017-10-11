@@ -59,7 +59,7 @@
       d3.text("positions.csv", function(data) {
                 parsedCSV = d3.csv.parseRows(data);
     setInterval(function() {
-      pubnub.publish({channel:pnChannel, message:{lat:window.lat + 0, lng:window.lng + 0}});
+      pubnub.publish({channel:pnChannel, message:{lat:window.lat + parsedCSV[dLat++][1], lng:window.lng + parsedCSV[dLng++][3]}});
     }, 6000);
       console.log(parsedCSV);
       });  
