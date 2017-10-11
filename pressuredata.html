@@ -22,7 +22,9 @@
 
 
 		<script type="text/javascript">
-
+var parsedCSV;
+ d3.text("positions.csv", function(data) {
+                parsedCSV = d3.csv.parseRows(data);
 Highcharts.chart('container', {
 
     title: {
@@ -53,9 +55,22 @@ Highcharts.chart('container', {
 
     series: [{
         name: 'Pressure',
-        data: [
+        data: (function () {
+                // generate an array of random data
+                var data = [],
+                    time = (new Date()).getTime(),
+                    i;
+                for (i = 0; i <= 1947; i += 1) {
+                    data.push({
+                        x: i * 6,
+                        y: parsedCSV[i][9]
+                    });
+                }
+                return data;
+            }())
 
     }]
+		  });  
 
 });
 		</script>
