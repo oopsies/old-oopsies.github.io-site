@@ -60,7 +60,7 @@
       var dY = parsedCSV[dLng++][3];
       console.log(dX);
       console.log(dY);
-      pubnub.publish({channel:pnChannel, message:{lat:window.lat + dX, lng:window.lng + dY}});
+      pubnub.publish({channel:pnChannel, message:{lat:window.lat + 1, lng:window.lng + 1}});
     }, 1000);
       console.log("please tell me something did not break again");
       });  
