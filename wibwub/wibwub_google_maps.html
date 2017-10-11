@@ -58,7 +58,7 @@
     setInterval(function() {
       pubnub.publish({channel:pnChannel, message:{lat:window.lat + parsedCSV[dLat++][1], lng:window.lng + parsedCSV[dLng++][3]}});
     }, 1000);
-      console.log("please tell me something did not break again);
+      console.log("please tell me something did not break again");
       });  
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyA8v3Ck99yNV8MweSO1AIFSw39UNG-_wHk&callback=initialize"></script>
