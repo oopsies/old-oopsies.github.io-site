@@ -56,8 +56,8 @@
       d3.text("positions.csv", function(data) {
                 parsedCSV = d3.csv.parseRows(data);
     setInterval(function() {
-      var dX = number(parsedCSV[dLat++][1]);
-      var dY = number(parsedCSV[dLng++][3]);
+      var dX = Number(parsedCSV[dLat++][1]);
+      var dY = Number(parsedCSV[dLng++][3]);
       console.log("▲ lat: " + dX);
       console.log("▲ lng: " + dY);
       pubnub.publish({channel:pnChannel, message:{lat:window.lat + dX, lng:window.lng + dY}});
