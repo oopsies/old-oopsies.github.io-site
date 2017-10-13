@@ -24,7 +24,7 @@
 		<script src="d3.v3.min.js"></script>
 		<script type="text/javascript">
 			
-var parsedData = [];
+
 var parsedCSV = (function() {
 	var x = [];
 d3.text("SenseHat.csv", function(data) {
@@ -32,9 +32,9 @@ d3.text("SenseHat.csv", function(data) {
 	});
 	console.log(x);
 	return x;
-}
+})();
 
-
+var parsedData = [];
 for (var i = 1946; i >= 0; i -=1){
 	parsedData.push(parsedCSV[i][9]);
 	}
