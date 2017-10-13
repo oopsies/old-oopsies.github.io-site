@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Highcharts Example</title>
+		<title>Pressure Chart</title>
 
 		<style type="text/css">
 #container {
@@ -51,6 +51,7 @@ Highcharts.chart('container', {
     plotOptions: {
         series: {
             pointStart: 0
+	    turboThreshold: 0; //MAKE SURE TO SET THIS TO 0 SO THAT LOTS OF POINTS ARE ALLOWED
         }
     },
 
