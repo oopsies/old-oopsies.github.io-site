@@ -24,15 +24,9 @@
 		<script src="d3.v3.min.js"></script>
 		<script type="text/javascript">
 			
-
-var parsedCSV = (function() {
-	var x = [];
 d3.text("SenseHat.csv", function(data) {
-              parsedCSV.x = d3.csv.parseRows(data);
-  	});
-  	console.log(x);
-  	return x;
-})();
+         parsedCSV = d3.csv.parseRows(data);
+  
 
 var parsedData = [];
 for (var i = 1946; i >= 0; i -=1){
@@ -77,6 +71,7 @@ Highcharts.chart('container', {
 
     }]
 		  });  
+	});
 
 
 		</script>
