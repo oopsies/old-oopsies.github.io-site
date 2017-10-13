@@ -23,11 +23,14 @@
 
 		<script src="d3.v3.min.js"></script>
 		<script type="text/javascript">
-var parsedCSV;
+
+var parsedCSV = (function() {
+	var x = [];
 d3.text("SenseHat.csv", function(data) {
-            parsedCSV = d3.csv.parseRows(data);
-	    console.log(parsedCSV);
+            parsedCSV.x = d3.csv.parseRows(data);
 	});
+	return x;
+}
 
 var parsedData = [];
 for (var i = 1946; i >= 0; i -=1){
