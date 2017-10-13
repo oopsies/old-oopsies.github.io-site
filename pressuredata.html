@@ -30,7 +30,6 @@ var parsedCSV = (function() {
 d3.text("SenseHat.csv", function(data) {
             parsedCSV.x = d3.csv.parseRows(data);
 	});
-	console.log(parsedCSV.x);
 	return parsedCSV.x;
 })();
 
