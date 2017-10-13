@@ -32,3 +32,5 @@ the second element of the array is which column is read. these can be changed to
 
 finally, to change which csv is read, modify `d3.text("positions.csv", function(data) {` on `line 56.`.
 change `"positions.csv"` to whatever your csv may be called.
+
+~~ by ryan v
