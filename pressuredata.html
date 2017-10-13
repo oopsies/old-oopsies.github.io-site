@@ -23,9 +23,19 @@
 
 		<script src="d3.v3.min.js"></script>
 		<script type="text/javascript">
-var parsedCSV;
- d3.text("SenseHat.csv", function(data) {
-                parsedCSV = d3.csv.parseRows(data);
+var parsedCSV = (function(){
+ 	d3.text("SenseHat.csv", function(data) {
+                return d3.csv.parseRows(data);
+		console.log(parsedCSV);
+	});
+}())
+var parsedData = [];
+for (var i = 1946; i >= 0; i -=1){
+	parsedData.push(parsedCSV[i][9]);
+	}
+console.log(parsedData);
+					
+			
 Highcharts.chart('container', {
 
     title: {
@@ -57,19 +67,13 @@ Highcharts.chart('container', {
 
     series: [{
         name: 'Pressure',
-        data: (function() {
-		var data = [];		
-		for (var i = 1946; i >= 0; i -=1){
-			data.push(parsedCSV[i][9]);
-		}
-		console.log(data);
-		return data;
+        data: parsedData
 	}())
 
     }]
 		  });  
 
-});
+
 		</script>
 	</body>
 </html>
